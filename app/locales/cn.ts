@@ -12,9 +12,9 @@ const cn = {
   },
   Auth: {
     Title: "需要密码",
-    Tips: "管理员开启了密码验证，请在下方填入访问码",
-    SubTips: "或者输入你的 OpenAI API 密钥",
-    Input: "在此处填写访问码",
+    Tips: "管理员开启了密码验证，请填入密码",
+    SubTips: "或者输入OpenAI API Key（密码不要填这里）",
+    Input: "在此处填写密码",
     Confirm: "确认",
     Later: "稍后再说",
   },
@@ -310,7 +310,7 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "有什么可以帮你的吗",
+    BotHello: "Yoo~~来聊天8~",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
