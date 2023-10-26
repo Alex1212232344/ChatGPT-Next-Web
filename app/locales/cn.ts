@@ -310,7 +310,7 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "Yoo~~来聊天8~",
+    BotHello: "Wuhoo~~来聊天吧~",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
