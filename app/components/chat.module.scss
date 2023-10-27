@@ -63,7 +63,7 @@
   width: calc(100% - 40px);
 
   .prompt-toast-inner {
-    display: flex;
+    display: none !important;
     justify-content: center;
     align-items: center;
     font-size: 12px;
@@ -246,8 +246,7 @@
   flex: 1;
   overflow: auto;
   overflow-x: hidden;
-  padding: 20px;
-  padding-bottom: 40px;
+  padding: 5px 20px 5px !important;
   position: relative;
   overscroll-behavior: none;
 }
@@ -285,7 +284,7 @@
 }
 
 .chat-message-header {
-  margin-top: 20px;
+  margin-top: 2px;
   display: flex;
   align-items: center;
 
@@ -369,7 +368,7 @@
 .chat-message-item {
   box-sizing: border-box;
   max-width: 100%;
-  margin-top: 10px;
+  margin-top: 2px;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.05);
   padding: 10px;
