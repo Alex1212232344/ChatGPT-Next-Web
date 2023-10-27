@@ -144,8 +144,8 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]} data-tauri-drag-region>
-        <div className={styles["sidebar-title"]} data-tauri-drag-region>
-          <a href="https://www.bilibili.com/video/BV1vH4y1m7ii" target="_blank" className={styles["sidebar-title"]} data-tauri-drag-region>
+        <div className={styles["sidebar-title"]} data-tauri-drag-region style={{ textAlign: 'center'}}>
+          <a href="https://www.bilibili.com/video/BV1vH4y1m7ii" target="_blank" className={styles["sidebar-title"]} sytle={{textDecoration: 'none'}} data-tauri-drag-region>
            《Agora Hills》
           </a>
         </div>
