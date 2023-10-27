@@ -310,7 +310,7 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "本站仅供同学们学习使用~~~（如果本站挂了或想看看其他站点，[点我](https://oneapi-1api.onrender.com/about) ）",
+    BotHello: "本站仅供同学们学习使用~~~（如果本站挂了或想看看其他站点，[点我](https://yetey-1api.hf.space/about)）",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
