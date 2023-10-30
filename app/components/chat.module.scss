@@ -295,9 +295,9 @@
     align-items: flex-end;
     justify-content: space-between;
     transition: all ease 0.3s;
-    transform: scale(0.9) translateY(5px);
+    transform: scale(1) translateY(0px);
     margin: 0 10px;
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
 
     .chat-input-actions {
