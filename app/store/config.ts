@@ -29,13 +29,13 @@ export const DEFAULT_CONFIG = {
   lastUpdate: Date.now(), // timestamp, to merge state
 
   submitKey: isMacOS() ? SubmitKey.Enter : SubmitKey.Enter,
-  avatar: "1f603",
+  avatar: "1f973",
   fontSize: 15,
   theme: Theme.Auto as Theme,
   tightBorder: true,
   sendPreviewBubble: false,
   enableAutoGenerateTitle: true,
-  sidebarWidth: 270,
+  sidebarWidth: 265,
 
   disablePromptHint: false,
 
