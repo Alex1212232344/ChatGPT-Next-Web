@@ -103,11 +103,11 @@ export const DEFAULT_MODELS = [
   },
   {
     name: "gpt-4-0314",
-    available: false,
+    available: true,
   },
   {
     name: "gpt-4-0613",
-    available: false,
+    available: true,
   },
   {
     name: "gpt-4-32k",
@@ -115,11 +115,11 @@ export const DEFAULT_MODELS = [
   },
   {
     name: "gpt-4-32k-0314",
-    available: false,
+    available: true,
   },
   {
     name: "gpt-4-32k-0613",
-    available: false,
+    available: true,
   },
   {
     name: "gpt-4-1106-preview",
@@ -135,11 +135,11 @@ export const DEFAULT_MODELS = [
   },
   {
     name: "gpt-3.5-turbo-0301",
-    available: false,
+    available: true,
   },
   {
     name: "gpt-3.5-turbo-0613",
-    available: false,
+    available: true,
   },
   {
     name: "gpt-3.5-turbo-1106",
@@ -151,7 +151,7 @@ export const DEFAULT_MODELS = [
   },
   {
     name: "gpt-3.5-turbo-16k-0613",
-    available: false,
+    available: true,
   },
 ] as const;
 
