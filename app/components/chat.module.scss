@@ -284,7 +284,7 @@
 }
 
 .chat-message-header {
-  margin-top: 2px;
+  margin-top: 0px;
   display: flex;
   align-items: center;
 
@@ -502,7 +502,7 @@
 
   position: absolute;
   right: 30px;
-  bottom: 32px;
+  bottom: 20px;
 }
 
 @media only screen and (max-width: 600px) {
