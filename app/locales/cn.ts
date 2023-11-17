@@ -13,7 +13,7 @@ const cn = {
   Auth: {
     Title: "需要密码",
     Tips: "管理员开启了密码验证，请填入密码",
-    SubTips: "或者输入OpenAI API Key（密码不要填这里）",
+    SubTips: "或者输入API Key（密码不要填这里）",
     Input: "在此处填写密码",
     Confirm: "确认",
     Later: "稍后再说",
