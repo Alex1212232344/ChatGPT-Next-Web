@@ -375,27 +375,66 @@ function ChatAction(props: {
   );
 }
 
+// function useScrollToBottom() {
+//   // for auto-scroll
+//   const scrollRef = useRef<HTMLDivElement>(null);
+//   const [autoScroll, setAutoScroll] = useState(true);
+
+//   function scrollDomToBottom() {
+//     const dom = scrollRef.current;
+//     if (dom) {
+//       requestAnimationFrame(() => {
+//         setAutoScroll(true);
+//         dom.scrollTo(0, dom.scrollHeight);
+//       });
+//     }
+//   }
+
+//   // auto scroll
+//   useEffect(() => {
+//     if (autoScroll) {
+//       scrollDomToBottom();
+//     }
+//   });
+
+//   return {
+//     scrollRef,
+//     autoScroll,
+//     setAutoScroll,
+//     scrollDomToBottom,
+//   };
+// }
+
+
 function useScrollToBottom() {
   // for auto-scroll
   const scrollRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
-
-  function scrollDomToBottom() {
+  
+  const scrollDomToBottom = () => {
     const dom = scrollRef.current;
-    if (dom) {
-      requestAnimationFrame(() => {
-        setAutoScroll(true);
-        dom.scrollTo(0, dom.scrollHeight);
-      });
-    }
-  }
+    if (!dom) return;
+      dom.scrollTo(0, dom.scrollHeight);
+  };
 
-  // auto scroll
   useEffect(() => {
+    const dom = scrollRef.current;
+    if (!dom) return;
+    // 使用MutationObserver来观察scrollHeight的变化
+    const observer = new MutationObserver( () => {
+      if (autoScroll) {
+        scrollDomToBottom();
+      }
+    });
+    observer.observe(dom, { attributes: true, childList: true, subtree: true });
+
+    // 立即执行一次滚动，确保初始状态正确
     if (autoScroll) {
       scrollDomToBottom();
     }
-  });
+    // 清理函数
+    return () => observer.disconnect();
+  }, [autoScroll]);
 
   return {
     scrollRef,
