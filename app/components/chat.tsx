@@ -405,7 +405,8 @@ function ChatAction(props: {
 //   };
 // }
 
-
+// 移动端上没办法处理好输入法弹出后的滚动到底，原版是可以一步到底
+// 不过为了同步官网体验，注释掉了textarea的onfocus和onclick逻辑，这部分不再影响
 function useScrollToBottom() {
   // for auto-scroll
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -686,7 +687,7 @@ function _Chat() {
     () => {
       const rows = inputRef.current ? autoGrowTextArea(inputRef.current) : 1;
       const inputRows = Math.min(
-        20,
+        14,
         Math.max(2 + Number(!isMobileScreen), rows),
       );
       setInputRows(inputRows);
@@ -824,7 +825,7 @@ function _Chat() {
     // copy to clipboard
     if (selectOrCopy(e.currentTarget, message.content)) {
       if (userInput.length === 0) {
-        setUserInput(message.content);
+        // setUserInput(message.content);
       }
 
       e.preventDefault();
@@ -1328,8 +1329,8 @@ function _Chat() {
             onInput={(e) => onInput(e.currentTarget.value)}
             value={userInput}
             onKeyDown={onInputKeyDown}
-            onFocus={scrollToBottom}
-            onClick={scrollToBottom}
+            // onFocus={scrollToBottom}
+            // onClick={scrollToBottom}
             rows={inputRows}
             autoFocus={autoFocus}
             style={{
