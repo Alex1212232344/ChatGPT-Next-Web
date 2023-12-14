@@ -407,7 +407,7 @@ function ChatAction(props: {
 
 // 移动端上没办法处理好输入法弹出后的滚动到底，原版是可以一步到底
 // 不过为了同步官网体验，注释掉了textarea的onfocus和onclick逻辑，这部分不再影响
-function useScrollToBottom() {
+export function useScrollToBottom() {
   // for auto-scroll
   const scrollRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
@@ -415,7 +415,7 @@ function useScrollToBottom() {
   const scrollDomToBottom = () => {
     const dom = scrollRef.current;
     if (!dom) return;
-      dom.scrollTo(0, dom.scrollHeight);
+    dom.scrollTo(0, dom.scrollHeight);
   };
 
   useEffect(() => {
@@ -433,6 +433,7 @@ function useScrollToBottom() {
     if (autoScroll) {
       scrollDomToBottom();
     }
+
     // 清理函数
     return () => observer.disconnect();
   }, [autoScroll]);
@@ -894,7 +895,7 @@ function _Chat() {
     // resend the message
     setIsLoading(true);
     chatStore.onUserInput(userMessage.content).then(() => setIsLoading(false));
-    inputRef.current?.focus();
+    // inputRef.current?.focus();
   };
 
   const onPinMessage = (message: ChatMessage) => {

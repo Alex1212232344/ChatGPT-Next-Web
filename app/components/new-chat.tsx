@@ -17,6 +17,8 @@ import { useCommand } from "../command";
 import { showConfirm } from "./ui-lib";
 import { BUILTIN_MASK_STORE } from "../masks";
 
+import { useScrollToBottom } from "./chat";
+
 function MaskItem(props: { mask: Mask; onClick?: () => void }) {
   return (
     <div className={styles["mask"]} onClick={props.onClick}>
@@ -89,6 +91,7 @@ export function NewChat() {
     setTimeout(() => {
       chatStore.newSession(mask);
       navigate(Path.Chat);
+      useScrollToBottom();
     }, 10);
   };
 

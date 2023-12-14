@@ -31,6 +31,8 @@ import { isIOS, useMobileScreen } from "../utils";
 import dynamic from "next/dynamic";
 import { showConfirm, showToast } from "./ui-lib";
 
+import { useScrollToBottom } from "./chat";
+
 const ChatList = dynamic(async () => (await import("./chat-list")).ChatList, {
   loading: () => null,
 });
@@ -231,8 +233,10 @@ export function SideBar(props: { className?: string }) {
               if (config.dontShowMaskSplashScreen) {
                 chatStore.newSession();
                 navigate(Path.Chat);
+                useScrollToBottom();
               } else {
                 navigate(Path.NewChat);
+                useScrollToBottom();
               }
             }}
             shadow

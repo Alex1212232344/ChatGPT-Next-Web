@@ -20,6 +20,8 @@ import { useRef, useEffect } from "react";
 import { showConfirm } from "./ui-lib";
 import { useMobileScreen } from "../utils";
 
+import { useScrollToBottom } from "./chat";
+
 export function ChatItem(props: {
   onClick?: () => void;
   onDelete?: () => void;
@@ -148,6 +150,7 @@ export function ChatList(props: { narrow?: boolean }) {
                 onClick={() => {
                   navigate(Path.Chat);
                   selectSession(i);
+                  useScrollToBottom();
                 }}
                 onDelete={async () => {
                   if (
