@@ -407,14 +407,16 @@ function ChatAction(props: {
 
 // 移动端上没办法处理好输入法弹出后的滚动到底，原版是可以一步到底
 // 不过为了同步官网体验，注释掉了textarea的onfocus和onclick逻辑，这部分不再影响
-export function useScrollToBottom() {
+function useScrollToBottom() {
   // for auto-scroll
   const scrollRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
+  const [preHeight, setPreHeight] = useState(0);
   
   const scrollDomToBottom = () => {
     const dom = scrollRef.current;
     if (!dom) return;
+    setPreHeight(dom.scrollHeight)
     dom.scrollTo(0, dom.scrollHeight);
   };
 
@@ -424,7 +426,9 @@ export function useScrollToBottom() {
     // 使用MutationObserver来观察scrollHeight的变化
     const observer = new MutationObserver( () => {
       if (autoScroll) {
-        scrollDomToBottom();
+        if (preHeight !== dom.scrollHeight) {
+          scrollDomToBottom();
+        }
       }
     });
     observer.observe(dom, { attributes: true, childList: true, subtree: true });
