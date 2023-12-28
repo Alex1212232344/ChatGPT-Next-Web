@@ -1,4 +1,4 @@
-<h1 align="center"><a href="https://github.com/Yidadaa/ChatGPT-Next-Web">ChatGPT Next Web</a></h1>
+<h1 align="center"><a href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">ChatGPT Next Web</a></h1>
 
 - [README](./README_CN.md)
 - [Cloudflare Pages 部署指南](docs/cloudflare-pages-cn.md)
