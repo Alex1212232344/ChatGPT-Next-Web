@@ -412,19 +412,20 @@ function useScrollToBottom() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
   const [preHeight, setPreHeight] = useState(0);
-  
+
   const scrollDomToBottom = () => {
     const dom = scrollRef.current;
     if (!dom) return;
-    setPreHeight(dom.scrollHeight)
+    setPreHeight(dom.scrollHeight);
     dom.scrollTo(0, dom.scrollHeight);
   };
 
   useEffect(() => {
     const dom = scrollRef.current;
     if (!dom) return;
+    
     // 使用MutationObserver来观察scrollHeight的变化
-    const observer = new MutationObserver( () => {
+    const observer = new MutationObserver(() => {
       if (autoScroll) {
         if (preHeight !== dom.scrollHeight) {
           scrollDomToBottom();
@@ -440,7 +441,7 @@ function useScrollToBottom() {
 
     // 清理函数
     return () => observer.disconnect();
-  }, [autoScroll]);
+  }, [autoScroll, preHeight]);
 
   return {
     scrollRef,
